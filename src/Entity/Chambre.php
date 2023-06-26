@@ -37,6 +37,11 @@ class Chambre
     #[ORM\OneToMany(mappedBy: 'chambre', targetEntity: Commande::class, orphanRemoval: true)]
     private Collection $commandes;
 
+    public function __toString()
+    {
+        return $this->titre; 
+    }
+
     public function __construct()
     {
         $this->commandes = new ArrayCollection();
