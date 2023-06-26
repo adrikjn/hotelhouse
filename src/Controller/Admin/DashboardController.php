@@ -44,9 +44,9 @@ class DashboardController extends AbstractDashboardController
             MenuItem::section('Commandes utilisateurs'),
             MenuItem::linkToCrud("Commande", 'far fa-calendar', Commande::class),
             MenuItem::section("Utilisateurs"),
-            MenuItem::linkToCrud('User', 'fas fa-users', Slider::class),
+            MenuItem::linkToCrud('User', 'fas fa-users', User::class),
             MenuItem::section('Caroussel'),
-            MenuItem::linkToCrud('Slider', 'fas fa-image', User::class),
+            MenuItem::linkToCrud('Slider', 'fas fa-image', Slider::class),
             MenuItem::section('Retour au site'),
             MenuItem::linkToRoute('Accueil du site', 'fa fa-igloo', 'home'),
         ];
