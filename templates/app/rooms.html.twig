@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Nos différentes chambres
+{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mt-3 text-primary text-uppercase">Nos chambres</h1>
+	<div class="container">
+		{% for room in rooms %}
+			<a href="{{ path('rent', {id : room.id}) }}">
+				<div class="row border border-dark shadow my-5 rounded">
+					<div class="col-6 d-flex flex-column align-items-center justify-content-center">
+						<h1>{{ room.titre }}</h1>
+						<p>{{ room.descriptionCourte|striptags }}</p>
+					</div>
+					<div class="col-6">
+						<img src="{{ asset("assets/img/chambres/" ~ room.photo) }}" alt="" class="img-fluid" style="width:500px;height:300px">
+					</div>
+				</div>
+			</a>
+		{% endfor %}
+	</div>
+{% endblock %}

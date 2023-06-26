@@ -6,18 +6,15 @@
 }
 
 body {
-  color: #fff;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
 }
 
 a {
-  color: #fff;
   text-decoration: none;
 }
-
+/* 
 .btn {
-  color: #fff;
   background-color: #316bc6;
   padding: 10px 30px;
   border-radius: 5px;
@@ -31,7 +28,7 @@ a {
   opacity: 0.8;
 
   background-blend-mode: multiply;
-}
+} */
 
 header {
   background-color: #F8F6F1;

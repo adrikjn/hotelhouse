@@ -42,6 +42,17 @@ class Commande
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date_arrive = null;
 
+    public function calculerPrixTotal()
+    {
+        $dateDepart = $this->getDateArrive();
+        $dateFin = $this->getDateDepart();
+        $prixJournalier = $this->getChambre()->getPrixJournalier();
+        $interval = $dateDepart->diff($dateFin);
+        $nombreJours = $interval->days + 1;
+        $prixTotal = $prixJournalier * $nombreJours;
+        return $prixTotal;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
