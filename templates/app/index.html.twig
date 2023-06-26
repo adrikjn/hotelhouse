@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+     <main>
+        <section class="hero">
+            <h1>HouseHôtel, <br> comme à la maison!</h1>
+            <a href="#" class="btn">Découvrez-nos chambres !</a>
+        </section>
+        <section class="services">
+            <h2>Services</h2>
+            <div class="cards">
+                <div class="card card-1">
+                    <div class="img-stock">
+                        <img src="assets/img/room2.jpg" alt="" class="services-img">
+                    </div>
+                    <h3>Chambres</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#" class="btn">Nos chambres</a>
+                </div>
+                <div class="card card-2">
+                    <div class="img-stock">
+                        <img src="assets/img/restaurant2.jpg" alt="" class="services-img">
+                    </div>
+                    <h3>Restaurant</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#" class="btn">Notre restaurant</a>
+                </div>
+                <div class="card card-3">
+                    <div class="img-stock">
+                        <img src="assets/img/spa2.jpg" alt="" class="services-img">
+                    </div>
+                    <h3>Spa</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#" class="btn">Notre spa</a>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
