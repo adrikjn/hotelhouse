@@ -39,16 +39,44 @@
 		<h2 class="text-center text-primary my-4">Réserver dès maintenant</h2>
 		<h3 class="mb-3 text-uppercase">{{chambre.titre}}</h3>
 		{{ form_start(form, {
-        novalidate: 'novalidate'
-    }) }}
+    novalidate: 'novalidate'
+}) }}
 
-		{{ form_row(form.date_arrive)}}
-		{{ form_row(form.date_depart)}}
-		<small class="text-danger">La {{ chambre.titre }} est au prix de {{ chambre.prixJournalier}}€ par nuit </small>
-		{{ form_row(form.prenom)}}
-		{{ form_row(form.nom)}}
-		{{ form_row(form.telephone)}}
-		{{ form_row(form.email)}}
+		<div class="row">
+			<div class="col-6">
+				{{ form_row(form.date_arrive) }}
+			</div>
+			<div class="col-6">
+				{{ form_row(form.date_depart) }}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-6  mb-5">
+				<small>La
+					{{ chambre.titre }}
+					est au prix de <span class="text-danger">{{ chambre.prixJournalier }}€</span>
+					 par nuit</small>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-6">
+				{{ form_row(form.prenom) }}
+			</div>
+			<div class="col-6">
+				{{ form_row(form.nom) }}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-6">
+				{{ form_row(form.telephone) }}
+			</div>
+			<div class="col-6">
+				{{ form_row(form.email) }}
+			</div>
+		</div>
 
 		<input type="submit" value="Envoyer" class="btn btn-primary w-100 mb-5">
 		{{ form_end(form) }}
