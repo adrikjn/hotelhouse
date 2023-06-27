@@ -1,0 +1,89 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Notre Restaurant
+{% endblock %}
+
+{% block body %}
+
+	<body class="bg-resto">
+		<div class="container">
+			<div class="row">
+				<div class="col-3 text-center">
+					<div class="card border-dark mb-3 mt-5" style="max-width: 18rem;">
+						<div class="card-header">Nos Menus</div>
+						<div class="card-body d-flex justify-content-between flex-column g-3 text-center">
+							<a href="#" onclick="toggleMenu(1)" class="card-link my-3">Carte Brasserie - Midi</a>
+
+							<a href="#" onclick="toggleMenu(2)" class="card-link my-3">Carte Dégustation - Après-Midi</a>
+
+							<a href="#" onclick="toggleMenu(3)" class="card-link my-3">Carte Restaurant - Soir</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-9 mx-auto text-white">
+					<div
+						id="menu1" class="menu-content mt-5 text-center" style="display: none;">
+						<!-- Contenu du menu Brasserie -->
+						<h3>Menu Brasserie</h3>
+						<p>Description du menu Brasserie.</p>
+						<div class="row">
+							<div class="col">
+								<h4>Entrées</h4>
+								<ul>
+									<li>Plat 1</li>
+									<li>Plat 2</li>
+									<li>Plat 3</li>
+								</ul>
+							</div>
+							<div class="col">
+								<h4>Plats principaux</h4>
+								<ul>
+									<li>Plat 4</li>
+									<li>Plat 5</li>
+									<li>Plat 6</li>
+								</ul>
+							</div>
+							<div class="col">
+								<h4>Desserts</h4>
+								<ul>
+									<li>Plat 7</li>
+									<li>Plat 8</li>
+									<li>Plat 9</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div
+						id="menu2" class="menu-content  mt-5 text-center" style="display: none;">
+						<!-- Contenu du menu Food -->
+						<h3>Menu Food</h3>
+						<p>Description du menu Food.</p>
+					</div>
+
+					<div
+						id="menu3" class="menu-content  mt-5 text-center" style="display: none;">
+						<!-- Contenu du menu Diner -->
+						<h3>Menu Diner</h3>
+						<p>Description du menu Diner.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function toggleMenu(menuNumber) {
+var menu = document.getElementById('menu' + menuNumber);
+var allMenus = document.getElementsByClassName('menu-content');
+
+// Masquer tous les menus
+for (var i = 0; i < allMenus.length; i++) {
+allMenus[i].style.display = 'none';
+}
+
+// Afficher le menu sélectionné
+menu.style.display = 'block';
+}
+		</script>
+	</body>
+{% endblock %}

@@ -42,6 +42,13 @@ class AppController extends AbstractController
         return $this->render('app/hotel.html.twig');
     }
 
+    #[Route('/restaurant', name: 'restaurant')]
+    public function restaurant(): Response
+    {
+        
+        return $this->render('app/restaurant.html.twig');
+    }
+
     #[Route('/chambre/{id}', name: 'rent')]
     public function rentRoom(Request $request, EntityManagerInterface $manager, Chambre $chambre = null): Response
     {
