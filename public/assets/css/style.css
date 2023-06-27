@@ -149,7 +149,7 @@ a {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
 }
 
-.hover-transparent h2, p {
+.hover-transparent {
   text-shadow: 1px 1px 2px #333;
 }
 

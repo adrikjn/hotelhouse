@@ -36,10 +36,17 @@ class AppController extends AbstractController
     }
 
     #[Route('/hotel', name: 'hotel')]
-    public function hotelInfo(ChambreRepository $repo): Response
+    public function hotelInfo(): Response
     {
         
         return $this->render('app/hotel.html.twig');
+    }
+
+    #[Route('/contact', name: 'contact')]
+    public function contact(): Response
+    {
+        
+        return $this->render('app/contact.html.twig');
     }
 
     #[Route('/restaurant', name: 'restaurant')]
@@ -47,6 +54,20 @@ class AppController extends AbstractController
     {
         
         return $this->render('app/restaurant.html.twig');
+    }
+
+    #[Route('/mentions', name: 'ml')]
+    public function mentions(): Response
+    {
+        
+        return $this->render('app/mentions.html.twig');
+    }
+
+    #[Route('/cgdv', name: 'cgdv')]
+    public function cgdv(): Response
+    {
+        
+        return $this->render('app/cgdv.html.twig');
     }
 
     #[Route('/chambre/{id}', name: 'rent')]

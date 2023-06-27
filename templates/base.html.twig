@@ -46,7 +46,32 @@
 							<a class="nav-link" href="#">Actualités</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Contact</a>
+							<a class="nav-link" href="{{ path('contact') }}">Contact</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Lien divers
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item" href="{{ path('ml') }}">Mentions Légales</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="{{ path('cgdv') }}">CGDV</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="#">Plan du site</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="#">Imprimer la page</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="#">Newsletter</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="#">Partage</a>
+								</li>
+							</ul>
 						</li>
 						{% if is_granted("ROLE_ADMIN") %}
 							<li class="nav-item">
