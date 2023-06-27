@@ -7,7 +7,7 @@
     <h1 class="text-center mt-3 text-dark text-uppercase">Nos chambres</h1>
 	<div class="container">
 		{% for room in rooms %}
-			<a href="{{ path('rent', {id : room.id}) }}">
+			<a class="hover-transparent"  href="{{ path('rent', {id : room.id}) }}">
 				<div class="row border border-dark shadow my-5 rounded">
 					<div class="col-6 d-flex flex-column align-items-center justify-content-center">
 						<h1>{{ room.titre }}</h1>
