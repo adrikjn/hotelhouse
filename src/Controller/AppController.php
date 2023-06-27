@@ -35,6 +35,13 @@ class AppController extends AbstractController
         ]);
     }
 
+    #[Route('/hotel', name: 'hotel')]
+    public function hotelInfo(ChambreRepository $repo): Response
+    {
+        
+        return $this->render('app/hotel.html.twig');
+    }
+
     #[Route('/chambre/{id}', name: 'rent')]
     public function rentRoom(Request $request, EntityManagerInterface $manager, Chambre $chambre = null): Response
     {

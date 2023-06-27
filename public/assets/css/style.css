@@ -31,7 +31,7 @@ a {
 } */
 
 header {
-  background-color: #F8F6F1;
+  background-color: #f8f6f1;
   padding: 0 80px;
   min-height: 65px;
   display: flex;
@@ -144,7 +144,8 @@ nav a:hover {
     width: 500px;
     color: #fff;
     font-weight: bold;
-    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+      0px 18px 23px rgba(0, 0, 0, 0.1);
     font-size: 18px;
   }
   nav a:hover {
@@ -178,7 +179,6 @@ nav a:hover {
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.61);
 }
 
-
 .services {
   color: #333;
   height: 1500px;
@@ -193,7 +193,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   margin: auto;
-  justify-content:center;
+  justify-content: center;
   gap: 25px;
   flex-wrap: wrap;
   padding: 30px;
@@ -215,13 +215,15 @@ nav a:hover {
 }
 
 .card:hover {
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .card h3 {
   text-align: center;
   font-size: 3rem;
-  text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
+  text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1),
+    10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
 }
 
 .card p {
@@ -239,6 +241,14 @@ nav a:hover {
   object-fit: cover;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.bg-hotel {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.247), transparent),
+    url(../../assets/img/hotelabout.jpg);
+  background-size: cover;
+  /* background-position: bottom; */
+  background-repeat: no-repeat;
 }
 
 .p-1 {
@@ -267,4 +277,14 @@ nav a:hover {
   .card {
     width: 80%;
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
+
+.hover-transparent:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+}
+
+.hover-transparent h2, p {
+  text-shadow: 1px 1px 2px #333;
+}
+
+
