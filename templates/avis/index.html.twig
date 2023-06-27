@@ -1,7 +1,59 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AvisController!{% endblock %}
+{% block title %}Avis
+{% endblock %}
 
 {% block body %}
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-9">
+				<h1 class="my-5 text-center text-primary bg-light rounded w-50 text"> Nombre d'avis clients : {{ avis|length }}</h1>
+				{% for item in avis %}
+					<div class="card text-center mb-4 w-75 mx-auto d-flex justify-content-center align-items-center">
+						<div class="card-header bg-secondary text-white rounded-pill p-3">
+							<h2>{{ item.email }}</h2>
+							<h4>{{ item.prenom }}
+								{{ item.nom }}</h4>
+						</div>
+						<div class="card-body">
+							<h5 class="card-title">Notation:
+								{{ item.notation }}/5</h5>
+							<p class="card-text">{{ item.commentaire }}</p>
+						</div>
+						<div class="card-footer bg-light text-muted">
+							<p>{{ item.dateEnregistrement|date('d/m/Y H:i:s') }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="col-3 mt-5">
+				<button id="afficherFormulaire" class="btn btn-primary">Cliquez ici pour laisser un commentaire</button>
+				<div id="formulaire" style="display: none;">
+					{{ form_start(form) }}
+					{{ form_row(form.email) }}
+					{{ form_row(form.nom) }}
+					{{ form_row(form.prenom) }}
+					{{ form_row(form.notation) }}
+					{{ form_row(form.commentaire) }}
+					<button type="submit" class="btn btn-warning">Envoyer Avis</button>
+					{{ form_end(form) }}
+				</div>
+			</div>
+
+			<script>
+				document.getElementById("afficherFormulaire").addEventListener("click", function () {
+var formulaire = document.getElementById("formulaire");
+if (formulaire.style.display === "none") {
+formulaire.style.display = "block";
+} else {
+formulaire.style.display = "none";
+}
+});
+			</script>
+
+		</div>
+	</div>
 
 {% endblock %}
