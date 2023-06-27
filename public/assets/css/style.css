@@ -170,19 +170,8 @@ nav a:hover {
 }
 .hero {
   min-height: calc(100vh - 65px);
-  background-color: pink;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.603), transparent), url(../img/hotel.jpg);
   background-size: cover;
   background-position: center;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-  text-align: center;
-  font-size: clamp(25px, 8vw, 35px);
-  padding: 1em;
 }
 
 .hero h1 {

@@ -4,8 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Chambre;
 use App\Entity\Commande;
+use App\Entity\Slider;
 use App\Form\CommandeType;
 use App\Repository\ChambreRepository;
+use App\Repository\SliderRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,9 +17,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AppController extends AbstractController
 {
     #[Route('/', name: 'home')]
-    public function index(): Response
+    public function index(SliderRepository $repo): Response
     {
-        return $this->render('app/index.html.twig');
+        $slides = $repo->findBy(['ordre' => [1, 2, 3]], ['ordre' => 'ASC']);
+
+        return $this->render('app/index.html.twig', [
+            'slides' => $slides
+        ]);
     }
 
     #[Route('/chambres', name: 'rooms')]

@@ -1,41 +1,72 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Home
+{% endblock %}
 
 {% block body %}
-     <main>
-        <section class="hero">
-            <h1>HouseHôtel, <br> comme à la maison!</h1>
-            <a href="#" class="btn">Découvrez-nos chambres !</a>
-        </section>
-        <section class="services">
-            <h2>Services</h2>
-            <div class="cards">
-                <div class="card card-1">
-                    <div class="img-stock">
-                        <img src="assets/img/room2.jpg" alt="" class="services-img">
-                    </div>
-                    <h3>Chambres</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="{{ path('rooms') }}" class="btn">Nos chambres</a>
-                </div>
-                <div class="card card-2">
-                    <div class="img-stock">
-                        <img src="assets/img/restaurant2.jpg" alt="" class="services-img">
-                    </div>
-                    <h3>Restaurant</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="#" class="btn">Notre restaurant</a>
-                </div>
-                <div class="card card-3">
-                    <div class="img-stock">
-                        <img src="assets/img/spa2.jpg" alt="" class="services-img">
-                    </div>
-                    <h3>Spa</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                    <a href="#" class="btn">Notre spa</a>
-                </div>
-            </div>
-        </section>
-    </main>
+
+	<main>
+		<section class="hero">
+			<h1 class="text-center">HouseHôtel,
+				<br>
+				comme à la maison!</h1>
+			
+			<div id="carouselExampleCaptions" class="carousel slide">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner">
+					{% for slide in slides %}
+						<div class="carousel-item{% if loop.first %} active{% endif %}">
+							<img src="{{ asset('assets/img/carousel/' ~ slide.photo) }}" class="d-block w-100" alt="Slide {{ loop.index }}" style="object-fit:cover;width:500px;height:800px">
+							<div class="carousel-caption d-none d-md-block">
+								<h2>Nos services !</h2>
+								<a href="{{ path('rooms') }}" class="btn text-center mx-auto bg-dark text-light mb-2">Découvrez-nos chambres !</a>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</section>
+
+		<section class="services">
+			<h2>Services</h2>
+			<div class="cards">
+				<div class="card card-1">
+					<div class="img-stock">
+						<img src="assets/img/room2.jpg" alt="" class="services-img">
+					</div>
+					<h3>Chambres</h3>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+					<a href="{{ path('rooms') }}" class="btn">Nos chambres</a>
+				</div>
+				<div class="card card-2">
+					<div class="img-stock">
+						<img src="assets/img/restaurant2.jpg" alt="" class="services-img">
+					</div>
+					<h3>Restaurant</h3>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+					<a href="#" class="btn">Notre restaurant</a>
+				</div>
+				<div class="card card-3">
+					<div class="img-stock">
+						<img src="assets/img/spa2.jpg" alt="" class="services-img">
+					</div>
+					<h3>Spa</h3>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+					<a href="#" class="btn">Notre spa</a>
+				</div>
+			</div>
+		</section>
+	</main>
 {% endblock %}
