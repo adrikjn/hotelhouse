@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body %}
-    <h1 class="text-center mt-3 text-primary text-uppercase">Nos chambres</h1>
+    <h1 class="text-center mt-3 text-dark text-uppercase">Nos chambres</h1>
 	<div class="container">
 		{% for room in rooms %}
 			<a href="{{ path('rent', {id : room.id}) }}">

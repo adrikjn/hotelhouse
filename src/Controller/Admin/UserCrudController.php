@@ -32,21 +32,28 @@ class UserCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')->hideOnForm(),
-            EmailField::new('email'),
+            EmailField::new('email')->onlyOnIndex(),
+            EmailField::new('email')->onlyWhenCreating(),
             TextField::new('password', 'Mot de passe')->setFormType(PasswordType::class)->onlyWhenCreating(),
-            TextField::new('pseudo'),
-            TextField::new('nom'),
-            TextField::new('prenom'),
+            TextField::new('pseudo')->onlyOnIndex(),
+            TextField::new('pseudo')->onlyWhenCreating(),
+
+            TextField::new('nom')->onlyOnIndex(),
+            TextField::new('nom')->onlyWhenCreating(),
+            TextField::new('prenom')->onlyOnIndex(),
+            TextField::new('prenom')->onlyWhenCreating(),
             ChoiceField::new('civilite')->setChoices([
                 'Homme' => 'homme',
                 'Femme' => 'femme',
             ])
-                ->setFormTypeOption('expanded', true),
+                ->setFormTypeOption('expanded', true)->onlyOnIndex(),
+            ChoiceField::new('civilite')->setChoices([
+                'Homme' => 'homme',
+                'Femme' => 'femme',
+            ])
+                ->setFormTypeOption('expanded', true)->onlyWhenCreating(),
             DateTimeField::new('dateEnregistrement')->setFormat('d/M/Y à H:m:s')->hideOnForm(),
-            CollectionField::new('roles')
-                ->setTemplatePath('admin/field/roles.html.twig')
-                ->setFormTypeOption('entry_options', ['data' => 'ROLE_ADMIN'])
-                ->setFormTypeOption('allow_add', false)
+            CollectionField::new('roles')->setTemplatePath('admin/field/roles.html.twig'),
         ];
     }
 
