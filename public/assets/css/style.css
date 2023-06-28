@@ -67,7 +67,6 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 20px;
   padding: 50px 10px;
   gap: 50px;
@@ -115,18 +114,6 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-
-.p-1 {
-  font-size: 1px;
-}
-
-.p-2 {
-  font-size: 2px;
-}
-
-.p-3 {
-  font-size: 3px;
 }
 
 @media only screen and (max-width: 1086px) {
