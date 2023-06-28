@@ -57,6 +57,7 @@ a {
   gap: 25px;
   flex-wrap: wrap;
   padding: 30px;
+  color:#B8860B"  
 }
 
 .card {
@@ -69,7 +70,6 @@ a {
   border-radius: 20px;
   padding: 50px 10px;
   gap: 50px;
-  color: #333;
 }
 
 .card:hover {
