@@ -11,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 
 class AvisCrudController extends AbstractCrudController
 {
@@ -19,11 +20,17 @@ class AvisCrudController extends AbstractCrudController
         return Avis::class;
     }
 
-    
+
     public function configureFields(string $pageName): iterable
     {
         return [
             IdField::new('id')->hideOnForm(),
+            ChoiceField::new('categorie')->setChoices([
+                'Hotel' => 'Hotel',
+                'Chambres' => 'Chambres',
+                'Restaurant' => 'Restaurant',
+                'Soin' => 'Soin',
+            ])->hideOnForm(),
             EmailField::new('email')->onlyOnIndex(),
             TextField::new('nom')->onlyOnIndex(),
             TextField::new('prenom')->onlyOnIndex(),
@@ -45,5 +52,4 @@ class AvisCrudController extends AbstractCrudController
         $produit->setDateEnregistrement(new \DateTime);
         return $produit;
     }
-    
 }

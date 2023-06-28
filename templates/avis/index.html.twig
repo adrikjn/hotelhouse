@@ -4,56 +4,76 @@
 {% endblock %}
 
 {% block body %}
+	<body>
+		<div class="container">
+			<div class="row">
+				<div
+					class="col-9">
+					<!-- Formulaire de sélection de catégorie -->
+					<form action="{{ path('avis') }}" method="GET" class="mb-4">
+						<p class="my-5 text-center h3" style="color:#B8860B">Nombre d'avis clients :
+							{{ avis|length }}</p>
+						<div class="form-group">
+							<label for="categorie">Sélectionnez une catégorie :</label>
+							<select name="categorie" id="categorie" class="form-control">
+								<option value="">Toutes les catégories</option>
+								{% for categorie in categories %}
+									<option value="{{ categorie|join }}" {% if categorie == selectedCategory %} selected {% endif %}>{{ categorie|join }}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<button type="submit" class="btn-css mt-3 w-100">Filtrer</button>
+					</form>
 
+					<!-- Affichage des avis filtrés -->
 
-	<div class="container">
-		<div class="row">
-			<div class="col-9">
-				<h1 class="my-5 text-center text-primary bg-light rounded w-50 text"> Nombre d'avis clients : {{ avis|length }}</h1>
-				{% for item in avis %}
-					<div class="card text-center mb-4 w-75 mx-auto d-flex justify-content-center align-items-center">
-						<div class="card-header bg-secondary text-white rounded-pill p-3">
-							<h2>{{ item.email }}</h2>
-							<h4>{{ item.prenom }}
-								{{ item.nom }}</h4>
+					{% for item in avis %}
+						<div class="hover-transparent p-3 mt-3 rounded">
+							<h2>Par :<span style="color:#B8860B">
+									{{ item.email }}</span>
+							</h2>
+							<h3 class="text-center my-3">Catégorie :
+								<span style="color:#B8860B">{{ item.categorie }}</span>
+							</h3>
+							<p>{{ item.nom|upper}}
+								{{ item.prenom}}</p>
+							<p>{{ item.commentaire }}</p>
+							<small>Note :
+								<span style="color:#B8860B">{{ item.notation }}</span>/5</small>
+							<div>
+								<p class="text-end">{{ item.dateEnregistrement|date('d/m/Y à H:i:s') }}</p>
+							</div>
 						</div>
-						<div class="card-body">
-							<h5 class="card-title">Notation:
-								{{ item.notation }}/5</h5>
-							<p class="card-text">{{ item.commentaire }}</p>
-						</div>
-						<div class="card-footer bg-light text-muted">
-							<p>{{ item.dateEnregistrement|date('d/m/Y H:i:s') }}</p>
-						</div>
+
+					{% endfor %}
+				</div>
+
+				<div class="col-3 mt-5">
+					<button id="afficherFormulaire" class="btn-css">Cliquez ici pour laisser un commentaire</button>
+					<div id="formulaire" style="display: none;">
+						{{ form_start(form) }}
+						{{ form_row(form.categorie) }}
+						{{ form_row(form.email) }}
+						{{ form_row(form.nom) }}
+						{{ form_row(form.prenom) }}
+						{{ form_row(form.notation) }}
+						{{ form_row(form.commentaire) }}
+						<button type="submit" class="btn btn-warning">Envoyer Avis</button>
+						{{ form_end(form) }}
 					</div>
-				{% endfor %}
-			</div>
-			<div class="col-3 mt-5">
-				<button id="afficherFormulaire" class="btn btn-primary">Cliquez ici pour laisser un commentaire</button>
-				<div id="formulaire" style="display: none;">
-					{{ form_start(form) }}
-					{{ form_row(form.email) }}
-					{{ form_row(form.nom) }}
-					{{ form_row(form.prenom) }}
-					{{ form_row(form.notation) }}
-					{{ form_row(form.commentaire) }}
-					<button type="submit" class="btn btn-warning">Envoyer Avis</button>
-					{{ form_end(form) }}
 				</div>
 			</div>
-
-			<script>
-				document.getElementById("afficherFormulaire").addEventListener("click", function () {
-				const formulaire = document.getElementById("formulaire");
-				if (formulaire.style.display === "none") {
-				formulaire.style.display = "block";
-				} else {
-				formulaire.style.display = "none";
-				}
-				});
-			</script>
-
 		</div>
-	</div>
 
-{% endblock %}
+		<script>
+			document.getElementById("afficherFormulaire").addEventListener("click", function () {
+const formulaire = document.getElementById("formulaire");
+if (formulaire.style.display === "none") {
+formulaire.style.display = "block";
+} else {
+formulaire.style.display = "none";
+}
+});
+		</script>
+</body>
+	{% endblock %}

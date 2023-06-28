@@ -23,6 +23,15 @@ class AvisType extends AbstractType
                     'placeholder' => "Entrez l'email"
                 ]
             ])
+            ->add('categorie', ChoiceType::class, [
+                'choices' => [
+                    'Hotel' => 'Hotel',
+                    'Chambres' => 'Chambres',
+                    'Restaurant' => 'Restaurant',
+                    'Soin' => 'Soin',
+                ],
+                'placeholder' => 'Choisissez la catégorie',
+            ])
             ->add('nom', TextType::class, [
                 'attr' => [
                     'placeholder' => "Entrez le nom"

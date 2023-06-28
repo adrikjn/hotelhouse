@@ -16,9 +16,21 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class AvisRepository extends ServiceEntityRepository
 {
+
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Avis::class);
+    }
+
+    public function findDistinctCategories()
+    {
+        $qb = $this->createQueryBuilder('a');
+        $qb->select('DISTINCT a.categorie');
+
+        $query = $qb->getQuery();
+
+        return $query->getResult();
     }
 
     public function save(Avis $entity, bool $flush = false): void
