@@ -13,3 +13,19 @@ const logoImpression = document.getElementById('logo-impression');
     window.open(partageURL, '_blank');
   });
 
+  const spaLinks = document.querySelectorAll('.spa-link');
+const spaSections = document.querySelectorAll('.spa-section');
+
+spaLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const target = link.dataset.target;
+
+    spaSections.forEach(section => {
+      section.classList.remove('show');
+    });
+
+    const targetSection = document.getElementById(target);
+    targetSection.classList.add('show');
+  });
+});

@@ -1,0 +1,176 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Spa
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 text-center">
+				<div class="card border-dark mb-3 mt-5 bg-dark">
+                <div class="card-header text-dark" style="background-color:#B8860B">Nos Fiches</div>
+					<div class="card-body d-flex justify-content-between flex-column g-3 text-center ">
+							<a href="#" class="spa-link card-link my-3 text-light rounded btn-css" data-target="detente">
+								<i class="bi bi-flower1"></i>
+								Spa avec soin Détente</a>
+							<a href="#" class="spa-link card-link my-3 text-light rounded btn-css" data-target="relaxant">
+								<i class="bi bi-sun"></i>
+								Spa avec soin Relaxant</a>
+							<a href="#" class="spa-link card-link my-3 text-light rounded btn-css" data-target="plaisir">
+								<i class="bi bi-heart-fill"></i>
+								Spa avec soin Plaisir</a>
+					</div>
+				</div>
+			</div>
+
+           
+
+        
+			<div class="col-md-8 mx-auto text-white">
+				<div class="spa-section border border-dark bg-dark rounded p-3 my-5" id="detente">
+					<h4 style="color: #B8860B">Spa avec soin Détente</h4>
+					<div class="spa-treatment">
+						<h5>Massage relaxant</h5>
+						<p>Durée : 60 minutes</p>
+						<p>Prix : $50</p>
+						<p>Offrez-vous un massage relaxant pour apaiser votre corps et votre esprit.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Soins du visage apaisants</h5>
+						<p>Durée : 45 minutes</p>
+						<p>Prix : $40</p>
+						<p>Profitez d'un soin du visage apaisant pour revitaliser votre peau.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Bain aromatique</h5>
+						<p>Durée : 30 minutes</p>
+						<p>Prix : $30</p>
+						<p>Détendez-vous dans un bain aromatique aux huiles essentielles pour une relaxation totale.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Massage californien</h5>
+						<p>Durée : 75 minutes</p>
+						<p>Prix : $60</p>
+						<p>Plongez dans un état de bien-être profond grâce à un massage californien.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Enveloppement corporel hydratant</h5>
+						<p>Durée : 90 minutes</p>
+						<p>Prix : $75</p>
+						<p>Nourrissez votre peau avec un enveloppement corporel hydratant pour une peau douce et lisse.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Soins des pieds et des mains</h5>
+						<p>Durée : 60 minutes</p>
+						<p>Prix : $45</p>
+						<p>Pamper vos pieds et vos mains avec des soins spéciaux pour les rendre doux et revitalisés.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Gommage corporel aux sels marins</h5>
+						<p>Durée : 45 minutes</p>
+						<p>Prix : $35</p>
+						<p>Exfoliez votre peau avec un gommage corporel aux sels marins pour une peau éclatante.</p>
+					</div>
+					<!-- Ajoutez d'autres soins détente ici -->
+				</div>
+
+				<div class="spa-section" id="relaxant">
+					<h4 style="background-color: #B8860B">Spa avec soin Relaxant</h4>
+					<div class="spa-treatment">
+						<h5>Massage aux pierres chaudes</h5>
+						<p>Durée : 75 minutes</p>
+						<p>Prix : $65</p>
+						<p>Laissez-vous emporter par la chaleur des pierres et profitez d'un massage relaxant.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Massage aux huiles essentielles</h5>
+						<p>Durée : 60 minutes</p>
+						<p>Prix : $55</p>
+						<p>Détendez-vous avec un massage aux huiles essentielles pour éliminer le stress et les tensions.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Soins du visage hydratants</h5>
+						<p>Durée : 60 minutes</p>
+						<p>Prix : $50</p>
+						<p>Hydratez votre peau en profondeur avec un soin du visage hydratant et régénérant.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Massage thaïlandais</h5>
+						<p>Durée : 90 minutes</p>
+						<p>Prix : $70</p>
+						<p>Détendez vos muscles et libérez les blocages énergétiques avec un massage thaïlandais traditionnel.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Soins du corps aux algues marines</h5>
+						<p>Durée : 75 minutes</p>
+						<p>Prix : $65</p>
+						<p>Rééquilibrez votre corps avec des soins du corps aux algues marines riches en minéraux.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Massage aux bougies parfumées</h5>
+						<p>Durée : 60 minutes</p>
+						<p>Prix : $55</p>
+						<p>Laissez-vous envelopper par la chaleur et les parfums relaxants d'un massage aux bougies.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Soins du dos purifiants</h5>
+						<p>Durée : 45 minutes</p>
+						<p>Prix : $45</p>
+						<p>Purifiez votre dos avec des soins spécifiques pour éliminer les impuretés et les tensions.</p>
+					</div>
+					<!-- Ajoutez d'autres soins relaxants ici -->
+				</div>
+
+				<div class="spa-section" id="plaisir">
+					<h4 style="background-color: #B8860B">Spa avec soin Plaisir</h4>
+					<div class="spa-treatment">
+						<h5>Massage suédois</h5>
+						<p>Durée : 90 minutes</p>
+						<p>Prix : $75</p>
+						<p>Profitez d'un massage suédois pour une détente profonde et une sensation de bien-être.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Soins du corps à la boue</h5>
+						<p>Durée : 75 minutes</p>
+						<p>Prix : $65</p>
+						<p>Régénérez votre peau avec des soins du corps à base de boue pour une peau revitalisée.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Massage aux bambous</h5>
+						<p>Durée : 60 minutes</p>
+						<p>Prix : $60</p>
+						<p>Relâchez les tensions musculaires avec un massage aux bambous pour une sensation de légèreté.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Soins du visage anti-âge</h5>
+						<p>Durée : 60 minutes</p>
+						<p>Prix : $55</p>
+						<p>Rajeunissez votre peau avec des soins du visage anti-âge pour une apparence plus jeune et éclatante.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Massage indien de la tête</h5>
+						<p>Durée : 45 minutes</p>
+						<p>Prix : $45</p>
+						<p>Stimulez la circulation sanguine et détendez votre esprit avec un massage indien de la tête.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Soins des pieds réparateurs</h5>
+						<p>Durée : 45 minutes</p>
+						<p>Prix : $40</p>
+						<p>Réparez et revitalisez vos pieds avec des soins spéciaux pour une sensation de légèreté.</p>
+					</div>
+					<div class="spa-treatment">
+						<h5>Massage aux coquillages chauds</h5>
+						<p>Durée : 75 minutes</p>
+						<p>Prix : $70</p>
+						<p>Laissez-vous transporter par les coquillages chauds et profitez d'un massage relaxant.</p>
+					</div>
+					<!-- Ajoutez d'autres soins plaisir ici -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

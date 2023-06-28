@@ -7,19 +7,46 @@
 {% block body %}
 	<body class="bg-resto">
 		<div class="container">
-			<h1 class="text-center my-4 text-uppercase" style="color:#B8860B">Nos Cartes</h1>
+			<h1 class="text-center my-4 text-uppercase" style="color:#B8860B">Le Restaurant de L'Hôtel</h1>
+			<section id="restaurant">
+					<div class="row">
+						<div class="col-lg-6 text-white mt-5">
+							<h2 class="section-heading">Découvrez notre restaurant</h2>
+							<p class="section-paragraph">
+								Bienvenue dans notre restaurant de renommée mondiale, situé au cœur de notre luxueux hôtel 5 étoiles.
+																                    Nous sommes fiers de vous offrir une expérience culinaire exceptionnelle dans un cadre élégant et
+																                    raffiné.
+							</p>
+							<p class="section-paragraph">
+								Notre menu est soigneusement élaboré par nos chefs talentueux qui utilisent uniquement les meilleurs
+																                    ingrédients frais et locaux pour créer des plats savoureux qui raviront vos papilles. Que vous
+																                    soyez amateur de cuisine traditionnelle ou de mets plus audacieux et créatifs, notre carte propose
+																                    une variété de choix qui saura satisfaire toutes les préférences.
+							</p>
+							<p class="section-paragraph">
+								Notre personnel attentionné et professionnel est dévoué à offrir un service impeccable et à
+																                    garantir que chaque visite soit une expérience mémorable. Que vous veniez pour un dîner intime, un
+																                    repas d'affaires ou une occasion spéciale, nous sommes là pour vous servir avec excellence.
+							</p>
+						</div>
+						<div class="col-lg-6">
+							<img src="{{ asset('assets/img/restopresentation.jpg') }}" alt="" style="border-radius:50%">
+						</div>
+					</div>
+			</section>
+			<h1 class="text-center my-5 text-uppercase" style="color:#B8860B">Nos Cartes</h1>
 			<div class="row">
 				<div class="col-3 text-center">
 					<div class="card border-dark mb-3 mt-5 bg-dark">
-						<div class="card-header text-light">Nos Menus</div>
+						<div class="card-header text-dark" style="background-color:#B8860B">Nos Menus</div>
 						<div class="card-body d-flex justify-content-between flex-column g-3 text-center ">
-							<a href="#" onclick="toggleMenu(1)" class="card-link my-3 text-white  rounded btn-css">Carte Brasserie -
+							<a href="#" onclick="toggleMenu(1)" class="card-link my-3 text-light rounded btn-css">Carte Brasserie -
 								<i class="bi bi-brightness-alt-high-fill"></i>
 							</a>
-							<a href="#" onclick="toggleMenu(2)" class="card-link my-3 text-white  rounded btn-css">Carte Dégustation -
+							<a href="#" onclick="toggleMenu(2)" class="card-link my-3 text-light rounded btn-css">Carte Dégustation -
 								<i class="bi bi-sun"></i>
 							</a>
-							<a href="#" onclick="toggleMenu(3)" class="card-link my-3 text-white   rounded btn-css">Carte Restaurant -
+							<a href="#" onclick="toggleMenu(3)" class="card-link my-3 text-dark rounded btn-css">Carte Restaurant -
 								<i class="bi bi-moon"></i>
 							</a>
 						</div>
@@ -52,7 +79,7 @@
 											<span class="text-end" style="color:#B8860B">9€</span>
 										</li>
 										<li class="mt-5">
-											<img src="{{ asset('assets/img/entrebrasserie.jpg') }}" alt="">
+											<img src="{{ asset('assets/img/entrebrasserie.jpg') }}" alt="" class="scale">
 										</li>
 									</ul>
 								</div>
@@ -84,7 +111,7 @@
 											<span class="text-end" style="color:#B8860B">22€</span>
 										</li>
 										<li class="mt-5">
-											<img src="{{ asset('assets/img/platbrasserie.jpg') }}" alt="">
+											<img src="{{ asset('assets/img/platbrasserie.jpg') }}" alt="" class="scale">
 										</li>
 									</ul>
 								</div>
@@ -112,7 +139,7 @@
 											<span class="text-end" style="color:#B8860B">13€</span>
 										</li>
 										<li class="mt-5">
-											<img src="{{ asset('assets/img/cakechocolate.jpg') }}" alt="">
+											<img src="{{ asset('assets/img/cakechocolate.jpg') }}" alt="" class="scale">
 										</li>
 									</ul>
 								</div>
@@ -144,7 +171,7 @@
 											<span class="text-end" style="color:#B8860B">16€</span>
 										</li>
 										<li class="mt-5">
-											<img src="{{ asset('assets/img/cheese.jpg') }}" alt="">
+											<img src="{{ asset('assets/img/cheese.jpg') }}" alt="" class="scale">
 										</li>
 									</ul>
 								</div>
@@ -172,7 +199,7 @@
 											<span class="text-end" style="color:#B8860B">24€</span>
 										</li>
 										<li class="mt-5">
-											<img src="{{ asset('assets/img/salmon.jpg') }}" alt="">
+											<img src="{{ asset('assets/img/salmon.jpg') }}" alt="" class="scale">
 										</li>
 									</ul>
 								</div>
@@ -200,7 +227,7 @@
 											<span class="text-end" style="color:#B8860B">11€</span>
 										</li>
 										<li class="mt-5">
-											<img src="{{ asset('assets/img/cakeapple.jpg') }}" alt="">
+											<img src="{{ asset('assets/img/cakeapple.jpg') }}" alt="" class="scale">
 										</li>
 									</ul>
 								</div>
@@ -232,7 +259,7 @@
 											<span class="text-end" style="color:#B8860B">12€</span>
 										</li>
 										<li class="mt-5">
-											<img src="{{ asset('assets/img/foiegras.jpg') }}" alt="">
+											<img src="{{ asset('assets/img/foiegras.jpg') }}" alt="" class="scale">
 										</li>
 									</ul>
 								</div>
@@ -264,7 +291,7 @@
 											<span class="text-end" style="color:#B8860B">18€</span>
 										</li>
 										<li class="mt-5">
-											<img src="{{ asset('assets/img/shrimp.jpg') }}" alt="">
+											<img src="{{ asset('assets/img/shrimp.jpg') }}" alt="" class="scale">
 										</li>
 									</ul>
 								</div>
@@ -292,7 +319,7 @@
 											<span class="text-end text-success">11€</span>
 										</li>
 										<li class="mt-5">
-											<img src="{{ asset('assets/img/coulychocolate.jpg') }}" alt="">
+											<img src="{{ asset('assets/img/coulychocolate.jpg') }}" alt="" class="scale">
 										</li>
 									</ul>
 								</div>
@@ -302,10 +329,16 @@
 				</div>
 			</div>
 
-			<div class="d-flex justify-content-center gx-3 flex-column bg-dark w-25 text-center p-5 mx-auto rounded">
-				<a href="{{ asset('assets/img/carteBrasserie.png') }}"  download class="text-white">Carte Brasserie <i class="bi bi-download"></i></a>
-				<a href="{{ asset('assets/img/carteDegustation.png') }}"  download class="text-white my-3">Carte Dégustation <i class="bi bi-download"></i></a>
-				<a href="{{ asset('assets/img/carteRestaurant.png') }}"  download class="text-white">Carte Restaurant <i class="bi bi-download"></i></a>
+			<div class="d-flex justify-content-center gx-3 flex-column w-25 text-center p-5 mx-auto rounded" style="background-color:#B8860B">
+				<a href="{{ asset('assets/img/carteBrasserie.png') }}" download class="text-white">Carte Brasserie
+					<i class="bi bi-download"></i>
+				</a>
+				<a href="{{ asset('assets/img/carteDegustation.png') }}" download class="text-white my-3">Carte Dégustation
+					<i class="bi bi-download"></i>
+				</a>
+				<a href="{{ asset('assets/img/carteRestaurant.png') }}" download class="text-white">Carte Restaurant
+					<i class="bi bi-download"></i>
+				</a>
 			</div>
 
 
@@ -313,15 +346,15 @@
 
 		<script>
 			function toggleMenu(menuId) {
-			for (let i = 1; i <= 3; i++) {
-			const menuContent = document.getElementById("menu" + i);
-			if (i === menuId) {
-			menuContent.style.display = "block";
-			} else {
-			menuContent.style.display = "none";
-			}
-			}
-			}
+for (let i = 1; i <= 3; i++) {
+const menuContent = document.getElementById("menu" + i);
+if (i === menuId) {
+menuContent.style.display = "block";
+} else {
+menuContent.style.display = "none";
+}
+}
+}
 		</script>
 	</body>
 {% endblock %}

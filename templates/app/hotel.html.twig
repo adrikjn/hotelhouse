@@ -6,11 +6,24 @@
 
 {% block body %}
 	<body class="bg-hotel text-dark">
-	<h1 class="text-center my-4 text-uppercase" style="color:#B8860B">A propos de nous</h1>
+		<h1 class="text-center my-4 text-uppercase" style="color:#B8860B">A propos de nous</h1>
 		<div class="container">
 			<div class="row mt-5 rounded">
-				<div class="col-5"></div>
-				<div class="col-7 d-flex justify-content-center align-items-center flex-column bg-light rounded p-5 hover-transparent">
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-md-6">
+							<img src="{{ asset('assets/img/aboutushotel.jpg')}}" alt="" class="mx-2 mb-2" style="object-fit:cover;">
+							<img src="{{ asset('assets/img/aboutushotel2.jpg')}}" alt="" style="object-fit:cover;" class="mx-2">
+						</div>
+						<div class="col-md-6">
+							<img src="{{ asset('assets/img/aboutushotel3.jpg')}}" alt=""  style="object-fit:cover;" class="mb-2">
+							<img src="{{ asset('assets/img/aboutushotel4.jpg')}}" alt="" style="object-fit:cover;">
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-7 d-flex justify-content-center align-items-center flex-column bg-light rounded p-5 hover-transparent">
 					<h2 class="text-shadow mb-3" style="color:#B8860B">Qui sommes-nous</h2>
 					<p class="text-shadow mt-3">Bienvenue chez HotelHouse, votre destination pour des séjours inoubliables. Depuis notre création, nous nous engageons à offrir à nos clients une expérience exceptionnelle dans l'industrie de l'hôtellerie.
 						<br>
@@ -36,12 +49,14 @@
 			</div>
 			<div class="">
 				<div class="row">
-					<div class="col-7 d-flex justify-content-center align-items-center flex-column mt-5 mb-3 bg-light rounded p-5 hover-transparent">
+					<div class="col-md-7 d-flex justify-content-center align-items-center flex-column mt-5 mb-3 bg-light rounded p-5 hover-transparent">
 						<h2 style="color:#B8860B" class="mb-3">Notre localisation :</h2>
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.0447200220447!2d2.3440240926751192!3d48.87642402553321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e6b328ce1a1%3A0x713ae68f46c8435b!2sH%C3%B4tel%20Paris%20Lafayette!5e0!3m2!1sfr!2sfr!4v1687857420959!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 						<p class="mt-4">L'accès à notre lieu est facile et pratique, que ce soit en voiture, en bus, en train ou même à pied. Nous sommes idéalement situés à proximité de différentes options de transport. Vous pouvez venir en voiture en utilisant les voies principales et vous trouverez un parking à proximité. Si vous préférez les transports en commun, plusieurs lignes de bus et de train desservent notre emplacement. De plus, si vous souhaitez profiter d'une agréable promenade, notre lieu est accessible à pied depuis divers points d'intérêt de la ville.</p>
 					</div>
-					<div class="col-5"></div>
+					<div class="col-md-5 mt-5">
+							<img src="{{ asset('assets/img/hotelstreet.jpg')}}" alt="" style="height:745px;" >
+					</div>
 				</div>
 
 			</div>

@@ -7,7 +7,7 @@
 
 <main>
 	<section class="hero">
-		<h1 class="text-center fst-italic p-3" style="color:#B8860B" >HouseHôtel,
+		<h1 class="text-center fst-italic p-3" style="color:#B8860B">HouseHôtel,
 			<br>
 			comme à la maison!</h1>
 
@@ -43,30 +43,91 @@
 				<div class="img-stock">
 					<img src="assets/img/room2.jpg" alt="" class="services-img">
 				</div>
-
 				<h3 style="color:#B8860B">Chambres</h3>
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+				<p>Découvrez un confort absolu et une élégance sans pareil dans nos chambres luxueuses. Chaque détail a été soigneusement pensé pour créer un environnement propice à la détente et au bien-être. Des matériaux de haute qualité, un design moderne et une ambiance chaleureuse se combinent pour offrir une expérience unique. Profitez d'un espace spacieux, d'un lit confortable et d'équipements de pointe pour un séjour inoubliable.</p>
 				<a href="{{ path('rooms') }}" class="btn-css">Nos chambres</a>
 			</div>
 			<div class="card card-2">
 				<div class="img-stock">
 					<img src="assets/img/restaurant2.jpg" alt="" class="services-img">
 				</div>
-
 				<h3 style="color:#B8860B">Restaurant</h3>
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+				<p>Découvrez une expérience culinaire exceptionnelle dans notre restaurant de renommée mondiale. Nos chefs talentueux utilisent les meilleurs ingrédients frais et locaux pour créer des plats savoureux qui raviront vos papilles. Que vous soyez amateur de cuisine traditionnelle ou de mets plus audacieux et créatifs, notre carte propose une variété de choix qui saura satisfaire toutes les préférences. qui saura satisfaire toutes les préférences.</p>
 				<a href="{{ path('restaurant') }}" class="btn-css">Notre restaurant</a>
 			</div>
 			<div class="card card-3">
 				<div class="img-stock">
 					<img src="assets/img/spa2.jpg" alt="" class="services-img">
 				</div>
-
 				<h3 style="color:#B8860B">Spa</h3>
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-				<a href="#" class="btn-css">Notre spa</a>
+				<p>Détendez-vous et ressourcez-vous dans notre luxueux spa. Notre équipe de professionnels qualifiés est là pour vous offrir une expérience de bien-être inoubliable. Laissez-vous dorloter avec une gamme de soins apaisants et revitalisants, allant des massages relaxants aux traitements de beauté raffinés. Profitez d'un environnement paisible et harmonieux où vous pourrez échapper au stress de la vie quotidienne et vous revitaliser en profondeur.</p>
+				<a href="{{ path('spa')}}" class="btn-css">Notre spa</a>
 			</div>
 		</div>
-	</section>
+		<div class="m3-5 mb-3">
+			<h2 style="color:#B8860B" class="mb-3 text-uppercase">Notre localisation</h2>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.0447200220447!2d2.3440240926751192!3d48.87642402553321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e6b328ce1a1%3A0x713ae68f46c8435b!2sH%C3%B4tel%20Paris%20Lafayette!5e0!3m2!1sfr!2sfr!4v1687857420959!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			<p class="mt-4">L'accès à notre lieu est facile et pratique, que ce soit en voiture, en bus, en train ou même à pied.
+				<br>
+				Nous sommes idéalement situés à proximité de différentes options de transport.
+				<br>Vous pouvez venir en voiture en utilisant les voies principales et vous trouverez un parking à proximité.
+				<br>
+				Si vous préférez les transports en commun, plusieurs lignes de bus et de train desservent notre emplacement.
+				<br>
+				De plus, si vous souhaitez profiter d'une agréable promenade, notre lieu est accessible à pied depuis divers points d'intérêt de la ville.</p>
+		</div>
+	</div>
 </div>
-< </main> {% endblock %}
+
+<div class="container">
+	<div class="p-5">
+		<h2 class="text-center mt-1 mb-4 text-uppercase" style="color:#B8860B">Contactez l'hôtel</h2>
+		<form>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="nom" style="color:#B8860B">Nom:</label>
+						<input type="text" class="form-control" id="nom" name="nom" required>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="prenom" style="color:#B8860B">Prénom:</label>
+						<input type="text" class="form-control" id="prenom" name="prenom" required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="email" style="color:#B8860B">Email:</label>
+						<input type="email" class="form-control" id="email" name="email" required>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="sujet" style="color:#B8860B">Sujet:</label>
+						<input type="text" class="form-control" id="sujet" name="sujet" required>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="categorie" style="color:#B8860B">Catégorie:</label>
+				<select class="form-control" id="categorie" name="categorie" required>
+					<option value="chambre">Chambre</option>
+					<option value="restaurant">Restaurant</option>
+					<option value="spa">Spa</option>
+					<option value="sujet_general">Sujet Général</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="message" style="color:#B8860B">Message:</label>
+				<textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+			</div>
+			<div class="text-center mt-5">
+				<button type="submit" class="btn-css w-50">Envoyer</button>
+			</div>
+		</form>
+
+	</div>
+</div></div></div><</div></main> {% endblock %}

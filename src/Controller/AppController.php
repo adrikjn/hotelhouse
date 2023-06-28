@@ -42,6 +42,13 @@ class AppController extends AbstractController
         return $this->render('app/hotel.html.twig');
     }
 
+    #[Route('/spa', name: 'spa')]
+    public function spa(): Response
+    {
+        
+        return $this->render('app/spa.html.twig');
+    }
+
     #[Route('/contact', name: 'contact')]
     public function contact(): Response
     {
