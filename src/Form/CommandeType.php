@@ -6,6 +6,7 @@ use App\Entity\Commande;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
@@ -16,11 +17,11 @@ class CommandeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('date_arrive', DateTimeType::class, [
+            ->add('date_arrive', DateType::class, [
                 'widget' => 'single_text',
                 'label' => "Date et heure de réservation"
             ])
-            ->add('date_depart', DateTimeType::class, [
+            ->add('date_depart', DateType::class, [
                 'widget' => 'single_text',
                 'label' => "Date et heure de rendue",
                 'constraints' => [
