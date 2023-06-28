@@ -7,8 +7,8 @@
 	<h1 class="text-center mt-5 text-uppercase" style="color:#B8860B">Nos chambres</h1>
 	<div class="container">
 		{% for room in rooms %}
-			<a class="hover-transparent" href="{{ path('rent', {id : room.id}) }}">
-				<div class="row my-5  p-5 room-border" >
+			<a class="" href="{{ path('rent', {id : room.id}) }}">
+				<div class="row my-5 p-5 room-border hover-transparent" >
 					{% if room.titre == "Chambre Confort" %}
 						<div class="col-6">
 							<img src="{{ asset("assets/img/chambres/" ~ room.photo) }}" alt="" class="img-fluid" style="width:500px;height:300px">
