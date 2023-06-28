@@ -12,3 +12,4 @@ const logoImpression = document.getElementById('logo-impression');
     const partageURL = `https://example.com/partager?url=${url}&titre=${titre}`;
     window.open(partageURL, '_blank');
   });
+

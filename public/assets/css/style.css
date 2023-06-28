@@ -7,7 +7,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 a {
@@ -20,7 +20,7 @@ ul li {
 
 
 .btn-css {
-  background-color: #316bc6;
+  background-color:#B8860B;
   padding: 10px 30px;
   border-radius: 5px;
   border: 1px solid #fff;
@@ -29,9 +29,9 @@ ul li {
 }
 
 .btn-css:hover {
-  background-color: #5587d5;
-  opacity: 0.8;
+  background-color: #966D31;
   background-blend-mode: multiply;
+  color: #fff;
 } 
 
 a {
@@ -57,7 +57,6 @@ a {
   gap: 25px;
   flex-wrap: wrap;
   padding: 30px;
-  min-height: 800px;
 }
 
 .card {
@@ -80,7 +79,6 @@ a {
 
 .card h3 {
   text-align: center;
-  font-size: 3rem;
 }
 
 .card p {

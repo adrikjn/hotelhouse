@@ -32,15 +32,14 @@
 			<span class="visually-hidden">Next</span>
 		</button>
 	</div>
-
+	
 	<div class="container mt-5">
-		<h2>Equipement et informations</h2>
-		<p class="mt-3">{{chambre.descriptionLongue|striptags }}</p>
-		<h2 class="text-center text-primary my-4">Réserver dès maintenant</h2>
-		<h3 class="mb-3 text-uppercase">{{chambre.titre}}</h3>
+	<h3 class="mb-3 text-uppercase" style="font-size:42px; color:#B8860B">{{chambre.titre}}</h3>
+	<h2 class="text-center my-4" style="color:#B8860B">Réserver dès maintenant</h2>
 		{{ form_start(form, {
     novalidate: 'novalidate'
 }) }}
+
 
 		<div class="row">
 			<div class="col-6">
@@ -55,8 +54,9 @@
 			<div class="col-6  mb-5">
 				<small>La
 					{{ chambre.titre }}
-					est au prix de <span class="text-danger">{{ chambre.prixJournalier }}€</span>
-					 par nuit</small>
+					est au prix de
+					<span style="color:#B8860B">{{ chambre.prixJournalier }}€</span>
+					par nuit</small>
 			</div>
 		</div>
 
@@ -78,9 +78,11 @@
 			</div>
 		</div>
 
-		<input type="submit" value="Envoyer" class="btn btn-primary w-100 mb-5">
+		<input type="submit" value="Envoyer" class=" w-100 my-5 btn-css">
 		{{ form_end(form) }}
 
+		<h2 class="text-center" style="color:#B8860B">Equipement et informations</h2>
+		<p class="mt-3">{{chambre.descriptionLongue|striptags }}</p>
 
 	</div>
 

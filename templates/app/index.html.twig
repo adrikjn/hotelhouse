@@ -7,7 +7,7 @@
 
 <main>
 	<section class="hero">
-		<h1 class="text-center bg-light fst-italic">HouseHôtel,
+		<h1 class="text-center fst-italic bg-light" >HouseHôtel,
 			<br>
 			comme à la maison!</h1>
 
@@ -23,7 +23,6 @@
 						<img src="{{ asset('assets/img/carousel/' ~ slide.photo) }}" class="d-block w-100" alt="Slide {{ loop.index }}" style="object-fit:cover;width:500px;height:800px">
 						<div class="carousel-caption d-none d-md-block p-5">
 							<a href="{{ path('rooms') }}" class="btn-css text-light">Réserver dès maintenant</a>
-							<h2 class="mt-5">Nos services !</h2>
 						</div>
 					</div>
 				{% endfor %}
@@ -39,7 +38,7 @@
 		</div>
 	</section>
 	<div class="container text-center">
-		<h2 class="text-dark bg-light text-center my-3 w-75 rounded mx-auto">Services</h2>
+		<h2 class="text-center my-3 mt-4 text-uppercase h1" style="color:#4169E1">Services</h2>
 		<div class="cards">
 			<div class="card card-1">
 				<div class="img-stock">
