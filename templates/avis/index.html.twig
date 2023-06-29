@@ -35,16 +35,26 @@
 							<h3 class="text-center my-3">Catégorie :
 								<span style="color:#B8860B">{{ item.categorie }}</span>
 							</h3>
-							<p>{{ item.nom|upper}}
-								{{ item.prenom}}</p>
-							<p>{{ item.commentaire }}</p>
-							<small>Note :
-								<span style="color:#B8860B">{{ item.notation }}</span>/5</small>
+							<p class="text-center mx-auto">Notation:
+								<span>
+									{% for i in range(1, 5) %}
+										{% if i <= item.notation %}
+											<span class="bi bi-star-fill text-warning"></span>
+										{% else %}
+											<span class="bi bi-star-fill text-secondary"></span>
+										{% endif %}
+									{% endfor %}
+								</span>
+							</p>
+							<div class="border border-1 border-dark p-3">
+								<p>De : {{ item.nom|upper}}
+									{{ item.prenom}}</p>
+								<p> <span class="text-decoration-underline">Commentaire :</span> <br>{{ item.commentaire }}</p>
+							</div>
 							<div>
-								<p class="text-end">{{ item.dateEnregistrement|date('d/m/Y à H:i:s') }}</p>
+								<p class="text-end fst-italic mt-3">{{ item.dateEnregistrement|date('d/m/Y à H:i:s') }}</p>
 							</div>
 						</div>
-
 					{% endfor %}
 				</div>
 
@@ -67,13 +77,13 @@
 
 		<script>
 			document.getElementById("afficherFormulaire").addEventListener("click", function () {
-const formulaire = document.getElementById("formulaire");
-if (formulaire.style.display === "none") {
-formulaire.style.display = "block";
-} else {
-formulaire.style.display = "none";
-}
-});
+			const formulaire = document.getElementById("formulaire");
+			if (formulaire.style.display === "none") {
+			formulaire.style.display = "block";
+			} else {
+			formulaire.style.display = "none";
+			}
+			});
 		</script>
-</body>
-	{% endblock %}
+	</body>
+{% endblock %}

@@ -4,19 +4,56 @@
 {% endblock %}
 
 {% block body %}
-	<div class="container ">
-		<div class="">
-			<div class="border border-light hover-transparent mt-5 p-5">
-					<h1 class="text-center my-4 text-uppercase" style="color:#B8860B">Contactez-nous !</h1>
+	<div class="container">
+		<div class="p-5">
+			<h2 class="text-center mt-1 mb-4 text-uppercase" style="color:#B8860B">Contactez l'hôtel</h2>
+			<form>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="nom" style="color:#B8860B">Nom:</label>
+							<input type="text" class="form-control" id="nom" name="nom" required>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="prenom" style="color:#B8860B">Prénom:</label>
+							<input type="text" class="form-control" id="prenom" name="prenom" required>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="email" style="color:#B8860B">Email:</label>
+							<input type="email" class="form-control" id="email" name="email" required>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="sujet" style="color:#B8860B">Sujet:</label>
+							<input type="text" class="form-control" id="sujet" name="sujet" required>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="categorie" style="color:#B8860B">Catégorie:</label>
+					<select class="form-control" id="categorie" name="categorie" required>
+						<option value="chambre">Chambre</option>
+						<option value="restaurant">Restaurant</option>
+						<option value="spa">Spa</option>
+						<option value="sujet_general">Sujet Général</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="message" style="color:#B8860B">Message:</label>
+					<textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+				</div>
+				<div class="text-center mt-5">
+					<button type="submit" class="btn-css w-50">Envoyer</button>
+				</div>
+			</form>
 
-				<div class="mb-3">
-					<label for="message" class="form-label">Message :</label>
-					<textarea id="message" name="message" class="form-control" rows="5" style="resize: none;" required></textarea>
-				</div>
-				<div class="text-center mt-3">
-					<a href="mailto:contact@votre-etablissement.com?subject=Contact depuis le site de l'hôtel&body=Bonjour," class="btn-css mb-4 mt-4">Envoyer un e-mail</a>
-				</div>
-			</div>
 		</div>
 	</div>
 {% endblock %}
