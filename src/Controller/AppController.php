@@ -2,12 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Slider;
 use App\Entity\Chambre;
 use App\Entity\Commande;
-use App\Entity\Slider;
 use App\Form\CommandeType;
-use App\Repository\ChambreRepository;
+use jcobhams\NewsApi\NewsApi;
 use App\Repository\SliderRepository;
+use App\Repository\ChambreRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -61,6 +62,13 @@ class AppController extends AbstractController
     {
         
         return $this->render('app/restaurant.html.twig');
+    }
+
+    #[Route('/actualites', name: 'actualites')]
+    public function actualites(): Response
+    {
+        // $newsapi = new NewsApi($your_api_key);
+        return $this->render('app/actualites.html.twig');
     }
 
     #[Route('/mentions', name: 'ml')]
