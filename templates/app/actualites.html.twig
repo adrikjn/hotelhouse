@@ -4,13 +4,13 @@
 {% endblock %}
 {% block body %}
 	<div class="container">
-		<h1 class="border-bottom py-2 text-center my-4" style="color:#B8860B">Journal d'Actualités</h1>
+		<h1 class="border-bottom py-2 text-center my-4" style="color:#B8860B">Actualités</h1>
 
 		<div class="row">
 			{% for article in articles %}
 				<div class="col-md-4">
 					<div class="card my-3">
-						<img src="{{ article.urlToImage }}" class="card-img-top" alt="Image de l'article">
+						<img src="{{ article.urlToImage }}" class="card-img-top rounded" alt="Image non disponible">
 						<div class="card-body">
 							<h5 class="card-title">{{ article.title }}</h5>
 							<p class="card-text">{{ article.description }}</p>
@@ -18,7 +18,11 @@
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item">
 								<strong>Auteur:</strong>
-								{{ article.author }}
+								{% if article.author %}
+									{{ article.author }}
+								{% else %}
+									Auteur inconnu
+								{% endif %}
 							</li>
 							<li class="list-group-item">
 								<strong>Date de publication:</strong>
@@ -26,7 +30,7 @@
 							</li>
 						</ul>
 						<div class="card-body">
-							<a href="{{ article.url }}" class="btn btn-primary">Lire l'article entier</a>
+							<a href="{{ article.url }}" class="btn btn-css">Lire l'article entier</a>
 						</div>
 					</div>
 				</div>

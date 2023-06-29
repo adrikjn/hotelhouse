@@ -7,10 +7,12 @@ use App\Entity\Chambre;
 use App\Entity\Commande;
 use App\Form\CommandeType;
 use jcobhams\NewsApi\NewsApi;
+use Symfony\Component\Mime\Email;
 use App\Repository\SliderRepository;
 use App\Repository\ChambreRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -122,5 +124,38 @@ class AppController extends AbstractController
             'form' => $form,
             'chambre' => $chambre
         ]);
+    }
+    
+    // public function sendEmailAction()
+    // {
+    //     $email = (new Email())
+    //         ->from('adrien.kouyoumjian@outlook.fr')
+    //         ->to('adrien.kouyoumjian@outlook.fr')
+    //         ->subject('Subject of the email')
+    //         ->text('Plain text body of the email')
+    //         ->html('<p>HTML body of the email</p>');
+
+    //     $this->mailer->send($email);
+
+        
+    //     return $this->render('email/success.html.twig');
+    // }
+
+    
+
+    #[Route('/newsletter', name: 'newsletter')]
+    public function inscription(Request $request, MailerInterface $mailer): Response
+    {
+        $email = (new Email())
+            ->from('adrien.kouyoumjian@outlook.fr')
+            ->to($request->request->get('email'))
+            ->subject('Inscription Newsletter')
+            ->text("Coucou t'es inscrit")
+            ->html('<h2> inscrit  </h2>');
+        
+            $mailer->send($email);
+
+        // dd($request->request->get('email'));
+        return $this->redirectToRoute('home');
     }
 }
