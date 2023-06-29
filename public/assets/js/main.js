@@ -14,18 +14,22 @@ const logoImpression = document.getElementById('logo-impression');
   });
 
   const spaLinks = document.querySelectorAll('.spa-link');
-const spaSections = document.querySelectorAll('.spa-section');
-
-spaLinks.forEach(link => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    const target = link.dataset.target;
-
-    spaSections.forEach(section => {
-      section.classList.remove('show');
+  const spaSections = document.querySelectorAll('.spa-section');
+  
+  // Ajouter la classe "show" à la première section par défaut
+  spaSections[0].classList.add('show');
+  
+  spaLinks.forEach((link, index) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const target = link.dataset.target;
+  
+      spaSections.forEach(section => {
+        section.classList.remove('show');
+      });
+  
+      const targetSection = document.getElementById(target);
+      targetSection.classList.add('show');
     });
-
-    const targetSection = document.getElementById(target);
-    targetSection.classList.add('show');
   });
-});
+  
