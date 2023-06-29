@@ -70,7 +70,7 @@ a {
   color:#B8860B"  
 }
 
-.card {
+.card-css {
   width: 20rem;
   min-height: 30rem;
   display: flex;
@@ -83,7 +83,7 @@ a {
   border-color: #B8860B;
 }
 
-.card:hover {
+.card-css:hover {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }

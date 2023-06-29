@@ -39,49 +39,59 @@ class AppController extends AbstractController
     #[Route('/hotel', name: 'hotel')]
     public function hotelInfo(): Response
     {
-        
+
         return $this->render('app/hotel.html.twig');
     }
 
     #[Route('/spa', name: 'spa')]
     public function spa(): Response
     {
-        
+
         return $this->render('app/spa.html.twig');
     }
 
     #[Route('/contact', name: 'contact')]
     public function contact(): Response
     {
-        
+
         return $this->render('app/contact.html.twig');
     }
 
     #[Route('/restaurant', name: 'restaurant')]
     public function restaurant(): Response
     {
-        
+
         return $this->render('app/restaurant.html.twig');
     }
 
     #[Route('/actualites', name: 'actualites')]
     public function actualites(): Response
     {
-        // $newsapi = new NewsApi($your_api_key);
-        return $this->render('app/actualites.html.twig');
+        $newsapi = new NewsApi('2910f1c91ef4401b905b5f356f55e533');
+        $response = $newsapi->getEverything('hôtellerie', null, null, null, null, null, 'fr', 'publishedAt', 15, null);
+
+        // dd($newsapi->getSortBy());
+        // $newsapi->getEverything($q, $sources, $domains, $exclude_domains, $from, $to, $language, $sort_by,  $page_size, $page);
+
+        $articles = $response->articles;
+        // dd($articles);
+
+        return $this->render('app/actualites.html.twig', [
+            'articles' => $articles,
+        ]);
     }
 
     #[Route('/mentions', name: 'ml')]
     public function mentions(): Response
     {
-        
+
         return $this->render('app/mentions.html.twig');
     }
 
     #[Route('/cgdv', name: 'cgdv')]
     public function cgdv(): Response
     {
-        
+
         return $this->render('app/cgdv.html.twig');
     }
 
