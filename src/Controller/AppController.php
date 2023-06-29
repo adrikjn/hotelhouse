@@ -11,6 +11,7 @@ use Symfony\Component\Mime\Email;
 use App\Repository\SliderRepository;
 use App\Repository\ChambreRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -125,37 +126,50 @@ class AppController extends AbstractController
             'chambre' => $chambre
         ]);
     }
-    
-    // public function sendEmailAction()
-    // {
-    //     $email = (new Email())
-    //         ->from('adrien.kouyoumjian@outlook.fr')
-    //         ->to('adrien.kouyoumjian@outlook.fr')
-    //         ->subject('Subject of the email')
-    //         ->text('Plain text body of the email')
-    //         ->html('<p>HTML body of the email</p>');
-
-    //     $this->mailer->send($email);
-
-        
-    //     return $this->render('email/success.html.twig');
-    // }
-
-    
 
     #[Route('/newsletter', name: 'newsletter')]
-    public function inscription(Request $request, MailerInterface $mailer): Response
+    public function inscriptionNewsletter(Request $request, MailerInterface $mailer): Response
     {
-        $email = (new Email())
+        $email = (new TemplatedEmail())
             ->from('adrien.kouyoumjian@outlook.fr')
             ->to($request->request->get('email'))
             ->subject('Inscription Newsletter')
-            ->text("Coucou t'es inscrit")
-            ->html('<h2> inscrit  </h2>');
-        
-            $mailer->send($email);
+            ->htmlTemplate('emails/newsletter.html.twig');
+
+        $mailer->send($email);
+
+        $this->addFlash('success', "Vous êtes inscrit à la Newsletter");
 
         // dd($request->request->get('email'));
+        return $this->redirectToRoute('home');
+    }
+
+    #[Route('/message', name: 'message')]
+    public function sendMessage(Request $request, MailerInterface $mailer): Response
+    {
+        $nom = $request->request->get('nom');
+        $prenom = $request->request->get('prenom');
+        $email = $request->request->get('email');
+        $sujet = $request->request->get('sujet');
+        $message = $request->request->get('message');
+
+        $email = (new TemplatedEmail())
+            ->from('adrien.kouyoumjian@outlook.fr')
+            ->to($email)
+            ->subject('Nouveau message')
+            ->htmlTemplate('emails/message.html.twig')
+            ->context([
+                'nom' => $nom,
+                'prenom' => $prenom,
+                'recipient_email' => $email,
+                'sujet' => $sujet,
+                'message' => $message,
+            ]);
+
+        $mailer->send($email);
+
+        $this->addFlash('success', 'Votre message a été envoyé avec succès.');
+
         return $this->redirectToRoute('home');
     }
 }

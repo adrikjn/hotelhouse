@@ -1,0 +1,30 @@
+{% block subject %}Nouveau message reçu{% endblock %}
+
+{% block body_html %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #333;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <div style="max-width: 600px; margin: 0 auto;">
+        <h2>Nouveau message reçu</h2>
+        <p><strong>Nom :</strong> {{ nom }}</p>
+        <p><strong>Prénom :</strong> {{ prenom }}</p>
+        <p><strong>Email :</strong> {{ recipient_email }}</p>
+        <p><strong>Sujet :</strong> {{ sujet }}</p>
+        <p><strong>Message :</strong></p>
+        <p>{{ message }}</p>
+    </div>
+{% endblock %}
