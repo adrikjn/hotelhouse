@@ -1,7 +1,7 @@
 Admin : /admin/personnavatrouveahahahahahalol1245a8eaze9/mdr/
 Connexion : /login/personnavatrouveahahahahahahahahpknooonaazgaz468da46azd546/mdr/
 
-Lien du projet : http://househotel.osc-fr1.scalingo.io/*
+Lien du projet : http://househotel.osc-fr1.scalingo.io/
 
 Compte admin : admin@admin.fr  
 Password : Azerty*123
