@@ -138,11 +138,11 @@
 				    <input type="text" id="url-copie" style="position: absolute; left: -9999px; opacity: 0;">
 			</li>
 			<li>
-				<a class="text-white" href="">
-					<i class="bi bi-facebook"></i>
-					<i class="bi bi-instagram mx-1"></i>
-					<i class="bi bi-twitter"></i>
-				</a>
+				<div>
+					<a href="https://www.facebook.com/lebristolparis/" target="_blank"><i class="bi bi-facebook text-white"></i></a>
+					<a href="https://www.instagram.com/toohotelparis/?hl=fr" target="_blank"><i class="bi bi-instagram mx-1 text-white"></i></a>
+					<a href="https://twitter.com/i/flow/login" target="_blank"><i class="bi bi-twitter text-white"></i></a>
+				</div>
 			</li>
 		</ul>
 	</div>
@@ -153,7 +153,7 @@
 		<form action="{{ path('newsletter')}}" method="post">
 			<div class="form-outline form-dark mb-4">
 				<input type="email" id="form5Example2" class="form-control" name="email"/>
-				<label class="form-label " for="form5Example2">Adresse email:</label>
+				<label class="form-label" for="form5Example2">Adresse email:</label>
 
 				<button type="submit" class="btn-css mt-3">Abonnement</button>
 			</div>
