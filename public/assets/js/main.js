@@ -9,9 +9,10 @@ const logoImpression = document.getElementById('logo-impression');
     event.preventDefault();
     const url = encodeURIComponent(window.location.href);
     const titre = encodeURIComponent(document.title);
-    const partageURL = `https://example.com/partager?url=${url}&titre=${titre}`;
+    const partageURL = `https://househotel.osc-fr1.scalingo.io/?url=${url}&titre=${titre}`;
     window.open(partageURL, '_blank');
   });
+  
 
   const spaLinks = document.querySelectorAll('.spa-link');
   const spaSections = document.querySelectorAll('.spa-section');
