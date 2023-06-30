@@ -1,2 +1,19 @@
 Admin : /admin/personnavatrouveahahahahahalol1245a8eaze9/mdr/
 Connexion : /login/personnavatrouveahahahahahahahahpknooonaazgaz468da46azd546/mdr/
+
+Lien du projet : http://househotel.osc-fr1.scalingo.io/*
+
+Compte admin : admin@admin.fr  
+Password : Azerty*123
+
+Accéder à la connexion : /login/personnavatrouveahahahahahahahahpknooonaazgaz468da46azd546/mdr/
+
+Accéder à la partie Admin : /admin/personnavatrouveahahahahahalol1245a8eaze9/mdr/
+
+J"ai toute les fonctionnalités de base du site + 
+Newsletter  (Mailer)
+Contact (Mailer)
+Partage (JS regarder footer (copie le lien))
+Actualite(NEWSAPI)
+Telecharger les plats 
+Imprimer la page
