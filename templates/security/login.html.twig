@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Log in!
+{% endblock %}
 
 {% block body %}
 	<form method="post">
@@ -13,11 +14,11 @@
 			</div>
 		{% endif %}
 
-		<h1 class="h3 mb-3 font-weight-normal text-center text-warning my-3">Connectez-vous</h1>
 
 		<div class="container">
+			<h2 class="text-center mt-1 mb-4 text-uppercase border-bottom py-2" style="color:#B8860B">Connectez-vous</h2>
 			<label for="inputEmail">Email</label>
-			<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+			<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-3" autocomplete="email" required autofocus>
 			<label for="inputPassword">Password</label>
 			<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
@@ -26,19 +27,21 @@
 
 
 			{#
-					        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-					        See https://symfony.com/doc/current/security/remember_me.html
-					
-					        <div class="checkbox mb-3">
-					            <label>
-					                <input type="checkbox" name="_remember_me"> Remember me
-					            </label>
-					        </div>
-					    #}
+											        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+											        See https://symfony.com/doc/current/security/remember_me.html
+											
+											        <div class="checkbox mb-3">
+											            <label>
+											                <input type="checkbox" name="_remember_me"> Remember me
+											            </label>
+											        </div>
+											    #}
+			<div class="mx-auto text-center">
+				<button class="btn-css my-3" type="submit">
+					Connection
+				</button>
+			</div>
 
-			<button class="btn btn-warning btn-lg my-3" type="submit">
-				Connection
-			</button>
 		</form>
 	</div>
 {% endblock %}

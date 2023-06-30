@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Slider;
 use App\Entity\Chambre;
 use App\Entity\Commande;
+use App\Entity\Newsletter;
 use App\Form\CommandeType;
 use jcobhams\NewsApi\NewsApi;
 use Symfony\Component\Mime\Email;
@@ -128,17 +129,19 @@ class AppController extends AbstractController
     }
 
     #[Route('/newsletter', name: 'newsletter')]
-    public function inscriptionNewsletter(Request $request, MailerInterface $mailer): Response
+    public function inscriptionNewsletter(Request $request, MailerInterface $mailer, EntityManagerInterface $manager): Response
     {
-        $email = (new TemplatedEmail())
-            ->from('adrien.kouyoumjian@outlook.fr')
-            ->to($request->request->get('email'))
-            ->subject('Inscription Newsletter')
-            ->htmlTemplate('emails/newsletter.html.twig');
+        $email = $request->request->get('email');
 
-        $mailer->send($email);
+        $newsletterEmail = (new TemplatedEmail())
+        ->from('adrien.kouyoumjian@outlook.fr')
+        ->to($email)
+        ->subject('Inscription Newsletter')
+        ->htmlTemplate('emails/newsletter.html.twig');
 
-        $this->addFlash('success', "Vous êtes inscrit à la Newsletter");
+    $mailer->send($newsletterEmail);
+
+    $this->addFlash('success', 'Vous êtes inscrit à la Newsletter');
 
         // dd($request->request->get('email'));
         return $this->redirectToRoute('home');
@@ -177,7 +180,6 @@ class AppController extends AbstractController
     #[Route('/pds', name: 'plan')]
     public function plan(): Response
     {
-
         return $this->render('app/plan.html.twig');
     }
 }
