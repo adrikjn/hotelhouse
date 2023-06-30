@@ -55,8 +55,8 @@ class AppController extends AbstractController
 
     #[Route('/contact', name: 'contact')]
     public function contact(): Response
-    {
-
+    {   
+        
         return $this->render('app/contact.html.twig');
     }
 
@@ -151,6 +151,7 @@ class AppController extends AbstractController
         $prenom = $request->request->get('prenom');
         $email = $request->request->get('email');
         $sujet = $request->request->get('sujet');
+        $categorie = $request->request->get('categorie');
         $message = $request->request->get('message');
 
         $email = (new TemplatedEmail())
@@ -163,6 +164,7 @@ class AppController extends AbstractController
                 'prenom' => $prenom,
                 'recipient_email' => $email,
                 'sujet' => $sujet,
+                'categorie' => $categorie,
                 'message' => $message,
             ]);
 
