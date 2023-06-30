@@ -154,8 +154,8 @@ class AppController extends AbstractController
         $message = $request->request->get('message');
 
         $email = (new TemplatedEmail())
-            ->from('adrien.kouyoumjian@outlook.fr')
-            ->to($email)
+            ->from($email)
+            ->to('adrien.kouyoumjian@outlook.fr')
             ->subject('Nouveau message')
             ->htmlTemplate('emails/message.html.twig')
             ->context([

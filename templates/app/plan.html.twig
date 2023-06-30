@@ -1,0 +1,66 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Plan du site
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<h1 class="text-center my-4 text-uppercase border-bottom py-2" style="color:#B8860B">Plan du site</h1>
+		<div class="row my-5 text-center">
+			<div class="col-md-6">
+				<h4 style="color:#B8860B">Hôtel</h4>
+				<ul class="p-3 d-flex flex-column justify-content-between">
+					<li class="mb-2">
+						<a href="{{ path('home') }}">Accueil</a>
+					</li>
+					<li class="mb-2">
+						<a href="{{ path('rooms') }}">Chambres</a>
+					</li>
+					<li class="mb-2">
+						<a href="{{ path('restaurant') }}">Restaurant</a>
+					</li>
+					<li class="mb-2">
+						<a href="{{ path('spa') }}">Spa</a>
+					</li>
+					<li class="mb-2">
+						<a href="{{ path('hotel')}}">A propos</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<h4 style="color:#B8860B">Autres</h4>
+				<ul class="p-3">
+					<li class="mb-2">
+						<a href="{{ path('avis') }}">Avis</a>
+					</li>
+					<li class="mb-2">
+						<a href="{{ path('actualites')}}">Actualités</a>
+					</li>
+					<li class="mb-2">
+						<a href="{{ path('contact') }}">Contact</a>
+					</li>
+					<li class="mb-2">
+						<a href="{{ path('ml') }}">Mentions Légales</a>
+					</li>
+					<li class="mb-2">
+						<a href="{{ path('cgdv') }}">CGDV</a>
+					</li>
+					<li class="mb-2">
+						<a href="{{ path('home')}}" id="lien-partage">Partage (Footer)</a>
+					</li>
+					<li class="mb-2">
+						<a href="{{ path('home')}}">Newsletter (Footer)</a>
+					</li>
+					<li class="mb-2">
+						<a href="{{ path('home')}}">Impression (Footer)</a>
+					</li>
+					<li class="mb-2">
+						<a href="{{ path('plan') }}">Plan du site</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
