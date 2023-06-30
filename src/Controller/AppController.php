@@ -8,6 +8,7 @@ use App\Entity\Commande;
 use App\Entity\Newsletter;
 use App\Form\CommandeType;
 use jcobhams\NewsApi\NewsApi;
+use Symfony\Component\Uid\Uuid;
 use Symfony\Component\Mime\Email;
 use App\Repository\SliderRepository;
 use App\Repository\ChambreRepository;
@@ -17,6 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AppController extends AbstractController
@@ -56,8 +58,8 @@ class AppController extends AbstractController
 
     #[Route('/contact', name: 'contact')]
     public function contact(): Response
-    {   
-        
+    {
+
         return $this->render('app/contact.html.twig');
     }
 
@@ -132,20 +134,32 @@ class AppController extends AbstractController
     public function inscriptionNewsletter(Request $request, MailerInterface $mailer, EntityManagerInterface $manager): Response
     {
         $email = $request->request->get('email');
-
+    
+        $user = $manager->getRepository(Newsletter::class)->findOneBy(['email' => $email]);
+    
+        if (!$user) {
+            $user = new Newsletter();
+            $user->setEmail($email);
+            $user->setAbonne(true);
+            $manager->persist($user);
+            $manager->flush();
+        }
+    
         $newsletterEmail = (new TemplatedEmail())
-        ->from('adrien.kouyoumjian@outlook.fr')
-        ->to($email)
-        ->subject('Inscription Newsletter')
-        ->htmlTemplate('emails/newsletter.html.twig');
-
-    $mailer->send($newsletterEmail);
-
-    $this->addFlash('success', 'Vous êtes inscrit à la Newsletter');
-
-        // dd($request->request->get('email'));
+            ->from('adrien.kouyoumjian@outlook.fr')
+            ->to($email)
+            ->subject('Inscription Newsletter')
+            ->htmlTemplate('emails/newsletter.html.twig');
+          
+    
+        $mailer->send($newsletterEmail);
+    
+        $this->addFlash('success', 'Vous êtes inscrit à la Newsletter');
         return $this->redirectToRoute('home');
     }
+    
+   
+
 
     #[Route('/message', name: 'message')]
     public function sendMessage(Request $request, MailerInterface $mailer): Response

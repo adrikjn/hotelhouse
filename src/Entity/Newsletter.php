@@ -19,6 +19,7 @@ class Newsletter
     #[ORM\Column]
     private ?bool $abonne = null;
 
+   
     public function getId(): ?int
     {
         return $this->id;
