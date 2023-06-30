@@ -4,8 +4,8 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="text-center mt-5 text-uppercase" style="color:#B8860B">Nos chambres</h1>
 	<div class="container">
+	<h1 class="text-center mt-5 text-uppercase border-bottom py-2" style="color:#B8860B">Nos chambres</h1>
 		{% for room in rooms %}
 			<a class="" href="{{ path('rent', {id : room.id}) }}">
 				<div class="row my-5 p-5 room-border hover-transparent" >

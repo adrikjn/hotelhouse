@@ -4,12 +4,12 @@
 {% endblock %}
 {% block body %}
 	<div class="container">
-		<h1 class="border-bottom py-2 text-center my-4" style="color:#B8860B">Actualités</h1>
+		<h1 class="border-bottom py-2 text-center my-4 text-uppercase" style="color:#B8860B">Actualités</h1>
 
 		<div class="row">
 			{% for article in articles %}
 				<div class="col-md-4">
-					<div class="card my-3">
+					<div class="card my-3 bg-light">
 						<img src="{{ article.urlToImage }}" class="card-img-top rounded" alt="Image non disponible">
 						<div class="card-body">
 							<h5 class="card-title">{{ article.title }}</h5>

@@ -172,4 +172,10 @@ class AppController extends AbstractController
 
         return $this->redirectToRoute('home');
     }
+    #[Route('/pds', name: 'plan')]
+    public function plan(): Response
+    {
+
+        return $this->render('app/plan.html.twig');
+    }
 }

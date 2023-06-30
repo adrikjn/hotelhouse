@@ -78,11 +78,11 @@
 			<i class="bi bi-dice-6-fill"></i>
 		</a>
 		<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-			<h5 class="text-uppercase mb-4 ">NOUS</h5>
+			<h5 class="text-uppercase mb-4" style="color:#B8860B">NOUS</h5>
 
 			<ul class="list-unstyled mb-4">
 				<li>
-					<a href="{{ path('hotel')}}" class="text-white">A propos</a>
+					<a href="{{ path('hotel')}}" class="text-white" >A propos</a>
 				</li>
 				<li>
 					<a href="{{ path('rooms') }}" class="text-white">Chambres</a>
@@ -91,13 +91,13 @@
 					<a href="{{ path('restaurant') }}" class="text-white">Restaurant</a>
 				</li>
 				<li>
-					<a href="#!" class="text-white">Spa</a>
+					<a href="{{ path('spa')}}" class="text-white">Spa</a>
 				</li>
 			</ul>
 		</div>
 
 		<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-			<h5 class="text-uppercase mb-4 ">Assistance & Avis</h5>
+			<h5 class="text-uppercase mb-4" style="color:#B8860B">Assistance & Avis</h5>
 
 			<ul class="list-unstyled">
 				<li>
@@ -106,39 +106,38 @@
 				<li>
 					<a class="text-white" href="{{ path('avis') }}">Avis</a>
 				</li>
+				<li>
+					<a class="text-light" href="#">Plan du site</a>
+				</li>
 			</ul>
 		</div>
 
 		<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-			<h5 class="text-uppercase mb-4 ">Autres</h5>
+			<h5 class="text-uppercase mb-4" style="color:#B8860B">Autres</h5>
 
 			<ul class="list-unstyled">
 				<li>
-					<a class="text-light" href="{{ path('ml') }}">Mentions Légales</a>
+					<a class="text-white" href="{{ path('ml') }}">Mentions Légales</a>
 				</li>
 				<li>
-					<a class="text-light" href="{{ path('cgdv') }}">CGDV</a>
+					<a class="text-white" href="{{ path('cgdv') }}">CGDV</a>
 				</li>
+				
 				<li>
-					<a class="text-light" href="#">Plan du site</a>
-				</li>
-				<li>
-					<a class="text-light" href="#" id="logo-impression">
-						<i class="bi bi-printer-fill text-light"></i>
+					<a class="text-white" href="#" id="logo-impression">
+						<i class="bi bi-printer-fill text-white"></i>
 					</a>
 				</li>
-				<li>
-					<a class="text-light" href="#">Newsletter</a>
-				</li>
+			
 				<li></li>
 				<li>
-					<a class="text-light" href="{{ path('actualites')}}">Actualités</a>
+					<a class="text-white" href="{{ path('actualites')}}">Actualités</a>
 
 				</li>
-				<a class="text-light" href="" id="lien-partage">Partage</a>
+				<a class="text-white" href="" id="lien-partage">Partage</a>
 			</li>
 			<li>
-				<a class="text-light" href="">
+				<a class="text-white" href="">
 					<i class="bi bi-facebook"></i>
 					<i class="bi bi-instagram mx-1"></i>
 					<i class="bi bi-twitter"></i>
@@ -148,14 +147,14 @@
 	</div>
 
 	<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-		<h5 class="text-uppercase mb-4 ">Inscris-toi à notre Newsletter</h5>
+		<h5 class="text-uppercase mb-4" style="color:#B8860B">Inscris-toi à notre Newsletter</h5>
 
 		<form action="{{ path('newsletter')}}" method="post">
 			<div class="form-outline form-dark mb-4">
 				<input type="email" id="form5Example2" class="form-control" name="email"/>
-				<label class="form-label " for="form5Example2">Adresse email</label>
+				<label class="form-label " for="form5Example2">Adresse email:</label>
 
-				<button type="submit" class="btn btn-outline-light btn-block ">Abonnement</button>
+				<button type="submit" class="btn-css mt-3">Abonnement</button>
 			</div>
 		</form>
 
@@ -163,4 +162,4 @@
 	</div>
 </div></div><div class="text-center  bg-dark border-top border-dark text-white">
 © 2023 Copyright:
-<small>HOTELHOUSE</small></div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script></body></html>
+<small style="color:#B8860B">HOTELHOUSE <i class="bi bi-dice-6-fill"></i></small></div></footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script></body></html>
